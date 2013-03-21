@@ -22,17 +22,19 @@ column-wise.
   }_{\text{Transformation
   Matrix}}
 \]
+Unlike the horizontal matrix shift, the order by which the transformation
+matrix is applied is reversed:
 \[ 
-  \begin{bmatrix}
-    0&0&1\\
-    1&0&0\\
-    0&1&0\\
-  \end{bmatrix}
-  \cdot
   \begin{bmatrix}
     a&b&c\\
     d&e&f\\
     g&h&i\\
+  \end{bmatrix}
+  \cdot
+  \begin{bmatrix}
+    0&0&1\\
+    1&0&0\\
+    0&1&0\\
   \end{bmatrix}
   =
   \underbrace{

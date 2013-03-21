@@ -88,14 +88,13 @@ def manipulate(image, name):
 def flip(image):
     '''
     flips an image
+    Essentially just multiplies it by a flipped id matrix
     '''
-    t  = numpy.transpose(image) # creates a transpose
-    il = numpy.identity(len(image)).tolist()  # Creates a matchting identity
+    il = numpy.identity(len(image)).tolist()  # Creates a matching identity
     for row in il: # Reverses the identity matrix
         row.reverse()
     i       = numpy.array(il) # Turns it into a formal array
-    flipped = numpy.transpose(numpy.dot(t, i))
-    return flipped # Returns transpose of t.i
+    return numpy.dot(i, image) # Dots them together
 
 def shift_hort(image):
     '''
